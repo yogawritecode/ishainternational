@@ -1,0 +1,272 @@
+<style>
+  /* Reset & Base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body,
+  html {
+    font-family: "Segoe UI", sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  .isha-header {
+    background-color: rgb(33, 68, 103);
+    color: #ffffff;
+    padding: 20px 20px;
+    font-family: "Segoe UI", sans-serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .header-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .logo h1 {
+    font-size: 1.8rem;
+    color: #00bcd4;
+    margin: 0;
+  }
+
+  .header-contact {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .contact-number {
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+
+  .social-links a {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .social-links a:hover {
+    color: #00bcd4;
+  }
+
+  /* Navbar */
+
+  .navbar {
+    background-color: #221f1f;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 180px;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    padding: 12px 16px;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+  }
+
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      background-color: #221f1f;
+    }
+
+    .menu.show {
+      display: flex;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: none;
+    }
+
+    .dropdown.active .dropdown-content {
+      display: block;
+      position: relative;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+</style>
+<a href="/index.html" style="text-decoration: none; color: inherit;">
+<header class="isha-header">
+  <div class="header-wrapper">
+    <div class="logo">
+      <h1>
+        <img
+          src="/assets/logo.png"
+          height="30px"
+          alt="Isha International Logo"
+        />
+        Isha International
+      </h1>
+    </div>
+</a>
+    <div class="header-contact">
+      <span class="contact-number">📞 01-41682299</span>
+      <div class="social-links">
+        <a
+          href="https://www.instagram.com/ishainternationalnepal/"
+          target="_blank"
+          aria-label="Instagram"
+          >📷</a
+        >
+        <a
+          href="https://www.facebook.com/p/Isha-international-100063184932852/"
+          aria-label="Facebook"
+          target="_blank"
+          >📘</a
+        >
+        <a
+          href="https://wa.me/+9779841934811"
+          target="_blank"
+          aria-label="WhatsApp"
+          >💬</a
+        >
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="/pages/blog/asus-vivobook.html">Blog</a>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="menu" id="navMenu">
+    <div class="dropdown" onclick="toggleDropdown(this)">
+      <a href="#">Laptops ▾</a>
+      <div class="dropdown-content">
+        <a href="/pages/laptop/asus.html">Asus</a>
+        <a href="/pages/laptop/hp.html">HP</a>
+        <a href="/pages/laptop/lenovo.html">Lenovo</a>
+        <a href="/pages/laptop/dell.html">Dell</a>
+      </div>
+    </div>
+
+    <div class="dropdown" onclick="toggleDropdown(this)">
+      <a href="#">Desktops & Server ▾</a>
+      <div class="dropdown-content">
+        <a href="/pages/desktop and server/branded.html">Branded Desktops</a>
+        <a href="/pages/desktop and server/allinonepc.html">All In One PC</a>
+        <a href="/pages/desktop and server/servers.html">Servers</a>
+      </div>
+    </div>
+
+    <div class="dropdown" onclick="toggleDropdown(this)">
+      <a href="#">Components ▾</a>
+      <div class="dropdown-content">
+        <a href="/pages/components/motherboards.html">Motherboards</a>
+        <a href="/pages/components/processors.html">Processors</a>
+        <a href="/pages/components/ram.html">RAM</a>
+        <a href="/pages/components/graphic-card.html">Graphic Card</a>
+      </div>
+    </div>
+
+    <div class="dropdown" onclick="toggleDropdown(this)">
+      <a href="#">CCTV & Accessories ▾</a>
+      <div class="dropdown-content">
+        <a href="/pages/cctv and accessories/cameras.html">Cameras</a>
+        <a href="/pages/cctv and accessories/video-recorder.html">Video Recorder</a>
+        <a href="/pages/cctv and accessories/switch.html">Switch</a>
+        <a href="/pages/cctv and accessories/storage.html">Storage</a>
+      </div>
+    </div>
+
+    <div class="dropdown" onclick="toggleDropdown(this)">
+      <a href="#">Printer & Scanner ▾</a>
+      <div class="dropdown-content">
+        <a href="/pages/printer and scanner/hp-scanner.html">HP Scanner</a>
+        <a href="/pages/printer and scanner/canon.html">Canon</a>
+        <a href="/pages/printer and scanner/epson.html">Epson</a>
+      </div>
+    </div>
+
+    <div class="dropdown" onclick="toggleDropdown(this)">
+      <a href="#">Profile ▾</a>
+      <div class="dropdown-content">
+        <a href="/pages/connect/login.html">My Account</a>
+        <a href="#">Orders</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+
+    <a href="#">Contact Us</a>
+    <a href="#">Build Your PC</a>
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("show");
+  }
+
+  function toggleDropdown(dropdown) {
+    if (window.innerWidth <= 768) {
+      dropdown.classList.toggle("active");
+    }
+  }
+</script>

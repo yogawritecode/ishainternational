@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+    <title>Graphics Card Price in Nepal (2025)</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .table-container {
+        overflow-x: auto;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 800px;
+      }
+      thead {
+        background-color: #007acc;
+        color: #fff;
+      }
+      th,
+      td {
+        padding: 12px 15px;
+        text-align: left;
+      }
+      tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tbody tr:hover {
+        background-color: #e6f7ff;
+      }
+      .filter-container {
+        margin-bottom: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .filter-container select {
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      @media (max-width: 600px) {
+        th,
+        td {
+          padding: 8px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Add this inside your body -->
+    <div id="header"></div>
+    <h2>Graphics Card Price in Nepal (2025)</h2>
+
+    <div class="filter-container">
+      <label for="brandFilter">Brand:</label>
+      <select id="brandFilter">
+        <option value="All">All</option>
+        <option value="NVIDIA">NVIDIA</option>
+        <option value="AMD">AMD</option>
+        <option value="Intel">Intel</option>
+      </select>
+
+      <label for="priceFilter">Max Price (NPR):</label>
+      <select id="priceFilter">
+        <option value="All">No Limit</option>
+        <option value="50000">50,000</option>
+        <option value="100000">100,000</option>
+        <option value="150000">150,000</option>
+        <option value="200000">200,000</option>
+        <option value="300000">300,000</option>
+      </select>
+    </div>
+
+    <div class="table-container">
+      <table id="gpuTable">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Brand</th>
+            <th>Memory</th>
+            <th>Architecture</th>
+            <th>VRAM</th>
+            <th>Price (NPR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- NVIDIA -->
+          <tr>
+            <td>RTX 5090</td>
+            <td>NVIDIA</td>
+            <td>GDDR6X</td>
+            <td>Ada Lovelace</td>
+            <td>24GB</td>
+            <td>364,999</td>
+          </tr>
+          <tr>
+            <td>RTX 4080 Super</td>
+            <td>NVIDIA</td>
+            <td>GDDR6X</td>
+            <td>Ada Lovelace</td>
+            <td>16GB</td>
+            <td>180,000</td>
+          </tr>
+          <tr>
+            <td>RTX 4060</td>
+            <td>NVIDIA</td>
+            <td>GDDR6</td>
+            <td>Ada Lovelace</td>
+            <td>8GB</td>
+            <td>50,000</td>
+          </tr>
+          <tr>
+            <td>GTX 1660 Super</td>
+            <td>NVIDIA</td>
+            <td>GDDR6</td>
+            <td>Turing</td>
+            <td>6GB</td>
+            <td>32,000</td>
+          </tr>
+          <!-- AMD -->
+          <tr>
+            <td>RX 7900 XTX</td>
+            <td>AMD</td>
+            <td>GDDR6</td>
+            <td>RDNA 3</td>
+            <td>24GB</td>
+            <td>145,000</td>
+          </tr>
+          <tr>
+            <td>RX 6800 XT</td>
+            <td>AMD</td>
+            <td>GDDR6</td>
+            <td>RDNA 2</td>
+            <td>16GB</td>
+            <td>95,000</td>
+          </tr>
+          <tr>
+            <td>RX 6600</td>
+            <td>AMD</td>
+            <td>GDDR6</td>
+            <td>RDNA 2</td>
+            <td>8GB</td>
+            <td>40,000</td>
+          </tr>
+          <!-- Intel -->
+          <tr>
+            <td>Arc A770 (16GB)</td>
+            <td>Intel</td>
+            <td>GDDR6</td>
+            <td>Xe-HPG</td>
+            <td>16GB</td>
+            <td>57,500</td>
+          </tr>
+          <tr>
+            <td>Arc A750</td>
+            <td>Intel</td>
+            <td>GDDR6</td>
+            <td>Xe-HPG</td>
+            <td>8GB</td>
+            <td>32,500</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- Your laptop table section stays here -->
+    <div id="footer"></div>
+    <script>
+      const brandFilter = document.getElementById("brandFilter");
+      const priceFilter = document.getElementById("priceFilter");
+      const table = document.getElementById("gpuTable");
+      const rows = table.querySelectorAll("tbody tr");
+
+      function filterTable() {
+        const brand = brandFilter.value;
+        const maxPrice = priceFilter.value;
+
+        rows.forEach((row) => {
+          const cells = row.querySelectorAll("td");
+          const rowBrand = cells[1].textContent;
+          const rowPrice = parseInt(cells[5].textContent.replace(/,/g, ""));
+
+          const brandMatch = brand === "All" || rowBrand === brand;
+          const priceMatch = maxPrice === "All" || rowPrice <= parseInt(maxPrice);
+
+          row.style.display = brandMatch && priceMatch ? "" : "none";
+        });
+      }
+
+      brandFilter.addEventListener("change", filterTable);
+      priceFilter.addEventListener("change", filterTable);
+    </script>
+
+    <script src="../../js/partial.js"></script>
+    <script>
+  includeHTML("#header", "../../partials/header.html", initHeaderScripts);
+  includeHTML("#footer", "../../partials/footer.html");
+
+  function initHeaderScripts() {
+    // Re-bind burger menu toggle
+    const burger = document.querySelector(".hamburger");
+    const menu = document.getElementById("navMenu");
+
+    if (burger && menu) {
+      burger.addEventListener("click", () => {
+        menu.classList.toggle("show");
+      });
+    }
+
+    // Re-bind dropdown toggle for mobile
+    const dropdowns = document.querySelectorAll(".dropdown");
+    dropdowns.forEach((dropdown) => {
+      dropdown.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          dropdown.classList.toggle("active");
+        }
+      });
+    });
+  }
+</script>
+  </body>
+</html>

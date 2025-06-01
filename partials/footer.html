@@ -1,0 +1,150 @@
+<style>
+ /* footer */
+.site-footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+  padding: 3rem 1rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section h2,
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.footer-section p,
+.footer-section ul li a {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: crimson;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: crimson;
+}
+
+.footer-section .social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 0.5rem;
+}
+
+.footer-section .social-icons a img {
+  width: 24px;
+  height: 24px;
+  filter: invert(80%);
+  transition: filter 0.3s;
+}
+
+.footer-section .social-icons a:hover img {
+  filter: invert(50%) sepia(100%) saturate(300%) hue-rotate(-10deg);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 13px;
+  color: #999;
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-section p,
+  .footer-section ul li a {
+    font-size: 13px;
+  }
+
+  .logo-text {
+    font-size: 1.4rem;
+  }
+}
+
+</style>
+
+<!-- Footer link -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <!-- Brand Info -->
+        <div class="footer-section about">
+          <h2 class="logo-text">Isha International</h2>
+          <p>Your trusted source for electronics and computer accessories.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#feature">Feature</a></li>
+            <li><a href="#trending">Trending</a></li>
+            <li><a href="#services">Service</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p>Email: isha.international8@gmail.com</p>
+          <p>Phone: 9841934811, 01-41682299</p>
+          <p>Location: Putalisadak, Kathmandu, Nepal</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-section social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/p/Isha-international-100063184932852/"
+              target="_blank"
+              ><img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/facebook.svg"
+                alt="Facebook"
+            /></a>
+            <a
+              href="https://www.instagram.com/ishainternationalnepal/"
+              target="_blank"
+              ><img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/instagram.svg"
+                alt="Instagram"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        &copy; 2025 Isha International. All rights reserved.
+      </div>
+    </footer>

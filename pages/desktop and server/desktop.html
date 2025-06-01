@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+  <title>Desktop - Isha International</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .table-container {
+      overflow-x: auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+    }
+    thead {
+      background-color: #007acc;
+      color: #fff;
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tbody tr:hover {
+      background-color: #e6f7ff;
+    }
+    .filter-container {
+      margin: 15px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .filter-container label {
+      font-weight: 500;
+    }
+    .filter-container select {
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    @media (max-width: 600px) {
+      th, td {
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+   <!-- Add this inside your body -->
+    <div id="header"></div>
+
+  <!-- Brand Sections -->
+  <!-- Repeat the pattern for Asus, HP, Dell, Lenovo -->
+
+  <h2>Branded Desktops Price in Nepal (2025)</h2>
+
+<div class="filter-container">
+  <label for="brandFilter">Brand:</label>
+  <select id="brandFilter">
+    <option value="All">All</option>
+    <option value="Dell">Dell</option>
+    <option value="HP">HP</option>
+    <option value="Lenovo">Lenovo</option>
+    <option value="Acer">Acer</option>
+    <option value="ASUS">ASUS</option>
+  </select>
+
+  <label for="desktopPriceFilter">Max Price (NPR):</label>
+  <select id="desktopPriceFilter">
+    <option value="All">No Limit</option>
+    <option value="50000">50,000</option>
+    <option value="100000">100,000</option>
+    <option value="150000">150,000</option>
+    <option value="200000">200,000</option>
+    <option value="250000">250,000</option>
+    <option value="300000">300,000</option>
+  </select>
+</div>
+
+<div class="table-container">
+  <table id="desktopTable">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Brand</th>
+        <th>Processor</th>
+        <th>RAM</th>
+        <th>Storage</th>
+        <th>Graphics</th>
+        <th>Price (NPR)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dell OptiPlex 7010 Micro</td>
+        <td>Dell</td>
+        <td>Intel Core i5 13th Gen</td>
+        <td>8GB</td>
+        <td>512GB SSD</td>
+        <td>Integrated</td>
+        <td>102,999</td>
+      </tr>
+      <tr>
+        <td>HP EliteDesk 800 G6</td>
+        <td>HP</td>
+        <td>Intel Core i5-10400</td>
+        <td>8GB</td>
+        <td>256GB SSD</td>
+        <td>Integrated</td>
+        <td>12,396</td>
+      </tr>
+      <tr>
+        <td>Lenovo ThinkCentre M720 SFF</td>
+        <td>Lenovo</td>
+        <td>Intel Core i7-8700</td>
+        <td>8GB</td>
+        <td>500GB</td>
+        <td>Integrated</td>
+        <td>79,667</td>
+      </tr>
+      <tr>
+        <td>Acer Veriton M4618G</td>
+        <td>Acer</td>
+        <td>Intel Core i5 3.0 GHz</td>
+        <td>8GB</td>
+        <td>500GB</td>
+        <td>Integrated</td>
+        <td>20,000</td>
+      </tr>
+      <tr>
+        <td>ASUS ExpertCenter D5</td>
+        <td>ASUS</td>
+        <td>Intel Core i5-13500</td>
+        <td>16GB</td>
+        <td>512GB SSD</td>
+        <td>Integrated</td>
+        <td>154,221</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h2>All In One PC Price in Nepal (2025)</h2>
+<div class="filter-container">
+  <label for="brandFilter">Brand:</label>
+  <select id="brandFilter">
+    <option value="All">All</option>
+    <option value="Lenovo">Lenovo</option>
+    <option value="HP">HP</option>
+    <option value="Dell">Dell</option>
+    <option value="Acer">Acer</option>
+  </select>
+
+  <label for="priceFilter">Max Price (NPR):</label>
+  <select id="priceFilter">
+    <option value="All">No Limit</option>
+    <option value="100000">100,000</option>
+    <option value="125000">125,000</option>
+    <option value="150000">150,000</option>
+    <option value="175000">175,000</option>
+  </select>
+</div>
+
+<div class="table-container">
+  <table id="aioTable">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Brand</th>
+        <th>Processor</th>
+        <th>RAM</th>
+        <th>Storage</th>
+        <th>Display</th>
+        <th>GPU</th>
+        <th>Price (NPR)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lenovo IdeaCentre AIO 3 24IAP7</td>
+        <td>Lenovo</td>
+        <td>Intel Core i5-12450H</td>
+        <td>8GB</td>
+        <td>256GB SSD</td>
+        <td>23.8" FHD IPS</td>
+        <td>Intel UHD</td>
+        <td>86,000</td>
+      </tr>
+      <tr>
+        <td>Lenovo IdeaCentre AIO 24IRH9</td>
+        <td>Lenovo</td>
+        <td>Intel Core i5-13420H</td>
+        <td>16GB</td>
+        <td>512GB SSD</td>
+        <td>23.8" FHD IPS 100Hz</td>
+        <td>Intel UHD</td>
+        <td>99,500</td>
+      </tr>
+      <tr>
+        <td>HP Envy Move 24</td>
+        <td>HP</td>
+        <td>Intel Core i5-1335U</td>
+        <td>16GB</td>
+        <td>256GB SSD</td>
+        <td>23.8" QHD Touch</td>
+        <td>Intel UHD</td>
+        <td>138,468</td>
+      </tr>
+      <tr>
+        <td>HP EliteOne 840 G9</td>
+        <td>HP</td>
+        <td>Intel Core i3-12300</td>
+        <td>8GB</td>
+        <td>256GB SSD</td>
+        <td>23.8" FHD IPS</td>
+        <td>Intel UHD 730</td>
+        <td>158,400</td>
+      </tr>
+      <tr>
+        <td>Dell OptiPlex 7410</td>
+        <td>Dell</td>
+        <td>Intel Core i5-13500T</td>
+        <td>16GB</td>
+        <td>512GB SSD</td>
+        <td>23.8" FHD Touch</td>
+        <td>Integrated</td>
+        <td>123,500</td>
+      </tr>
+      <tr>
+        <td>Acer Aspire C24 1800</td>
+        <td>Acer</td>
+        <td>Intel Core i5-1355U</td>
+        <td>8GB</td>
+        <td>512GB SSD</td>
+        <td>23.8" FHD IPS</td>
+        <td>Integrated</td>
+        <td>93,000</td>
+      </tr>
+      <tr>
+        <td>Acer Aspire C24 1851</td>
+        <td>Acer</td>
+        <td>Intel Core i3-1305U</td>
+        <td>8GB</td>
+        <td>512GB SSD</td>
+        <td>23.8" FHD IPS</td>
+        <td>Integrated</td>
+        <td>85,000</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Your laptop table section stays here -->
+    <div id="footer"></div>
+  <script>
+    function filterTable(brand) {
+      const seriesFilter = document.getElementById(`${brand}SeriesFilter`);
+      const priceFilter = document.getElementById(`${brand}PriceFilter`);
+      const table = document.getElementById(`${brand}Table`);
+      const rows = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+      const selectedSeries = seriesFilter.value;
+      const maxPrice = priceFilter.value === "All" ? Infinity : parseInt(priceFilter.value);
+
+      for (let row of rows) {
+        const cells = row.getElementsByTagName("td");
+        const series = cells[1].textContent;
+        const price = parseInt(cells[cells.length - 1].textContent.replace(/[^\d]/g, '')) || 0;
+
+        const matchesSeries = selectedSeries === "All" || series === selectedSeries;
+        const matchesPrice = isNaN(price) || price <= maxPrice;
+
+        row.style.display = matchesSeries && matchesPrice ? "" : "none";
+      }
+    }
+  </script>
+  <script src="../../js/partial.js"></script>
+    <script>
+  includeHTML("#header", "../../partials/header.html", initHeaderScripts);
+  includeHTML("#footer", "../../partials/footer.html");
+
+  function initHeaderScripts() {
+    // Re-bind burger menu toggle
+    const burger = document.querySelector(".hamburger");
+    const menu = document.getElementById("navMenu");
+
+    if (burger && menu) {
+      burger.addEventListener("click", () => {
+        menu.classList.toggle("show");
+      });
+    }
+
+    // Re-bind dropdown toggle for mobile
+    const dropdowns = document.querySelectorAll(".dropdown");
+    dropdowns.forEach((dropdown) => {
+      dropdown.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          dropdown.classList.toggle("active");
+        }
+      });
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+    <title>HP Laptops Price in Nepal (2025)</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .table-container {
+        overflow-x: auto;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 800px;
+      }
+      thead {
+        background-color: #003366;
+        color: #fff;
+      }
+      th,
+      td {
+        padding: 12px 15px;
+        text-align: left;
+      }
+      tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tbody tr:hover {
+        background-color: #e6f7ff;
+      }
+      .filter-container {
+        margin-bottom: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .filter-container select {
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      @media (max-width: 600px) {
+        th,
+        td {
+          padding: 8px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Add this inside your body -->
+    <div id="header"></div>
+    <h2>HP Laptops Price in Nepal (2025)</h2>
+
+    <div class="filter-container">
+      <label for="seriesFilter">Series:</label>
+      <select id="seriesFilter">
+        <option value="All">All</option>
+        <option value="Traditional">Traditional</option>
+        <option value="Pavilion">Pavilion</option>
+        <option value="Envy">Envy</option>
+        <option value="Victus">Victus</option>
+        <option value="Omen">Omen</option>
+        <option value="Spectre">Spectre</option>
+      </select>
+
+      <label for="priceFilter">Max Price (NPR):</label>
+      <select id="priceFilter">
+        <option value="All">No Limit</option>
+        <option value="80000">80,000</option>
+        <option value="100000">100,000</option>
+        <option value="150000">150,000</option>
+        <option value="200000">200,000</option>
+        <option value="250000">250,000</option>
+      </select>
+    </div>
+
+    <div class="table-container">
+      <table id="laptopTable">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Series</th>
+            <th>Specs</th>
+            <th>Price (NPR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Notebook 14s</td>
+            <td>Traditional</td>
+            <td>i3-1215U, 4GB, 256GB, 14" HD</td>
+            <td>Out of stock</td>
+          </tr>
+          <tr>
+            <td>Notebook 15s 2022</td>
+            <td>Traditional</td>
+            <td>i5-1235U, 8GB, 512GB, 15.6" FHD</td>
+            <td>74,000</td>
+          </tr>
+          <tr>
+            <td>Pavilion 15</td>
+            <td>Pavilion</td>
+            <td>i5-1235U, MX550, 8GB, 512GB</td>
+            <td>86,999</td>
+          </tr>
+          <tr>
+            <td>Envy x360 14 2023</td>
+            <td>Envy</td>
+            <td>i5-1335U, 8GB, 512GB, FHD Touch</td>
+            <td>83,500</td>
+          </tr>
+          <tr>
+            <td>Victus 15 2023</td>
+            <td>Victus</td>
+            <td>i5-13420H, RTX 3050, 8GB, 512GB</td>
+            <td>112,000</td>
+          </tr>
+          <tr>
+            <td>Omen 16 2024</td>
+            <td>Omen</td>
+            <td>i7-14700HX, RTX 4070, 16GB, 512GB</td>
+            <td>240,000</td>
+          </tr>
+          <tr>
+            <td>Spectre x360 14 2023</td>
+            <td>Spectre</td>
+            <td>i7-1355U, 16GB, 512GB, 13.5" WUXGA Touch</td>
+            <td>209,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Your laptop table section stays here -->
+    <div id="footer"></div>
+    <script>
+      const seriesFilter = document.getElementById("seriesFilter");
+      const priceFilter = document.getElementById("priceFilter");
+      const table = document.getElementById("laptopTable");
+      const rows = table
+        .getElementsByTagName("tbody")[0]
+        .getElementsByTagName("tr");
+
+      function filterTable() {
+        const series = seriesFilter.value;
+        const maxPrice = priceFilter.value;
+
+        for (let i = 0; i < rows.length; i++) {
+          const cells = rows[i].getElementsByTagName("td");
+          const rowSeries = cells[1].textContent;
+          const priceText = cells[3].textContent;
+
+          const rowPrice = priceText.toLowerCase().includes("out")
+            ? Infinity
+            : parseInt(priceText.replace(/,/g, ""));
+
+          let seriesMatch = series === "All" || rowSeries === series;
+          let priceMatch = maxPrice === "All" || rowPrice <= parseInt(maxPrice);
+
+          if (seriesMatch && priceMatch) {
+            rows[i].style.display = "";
+          } else {
+            rows[i].style.display = "none";
+          }
+        }
+      }
+
+      seriesFilter.addEventListener("change", filterTable);
+      priceFilter.addEventListener("change", filterTable);
+    </script>
+    <script src="../../js/partial.js"></script>
+    <script>
+  includeHTML("#header", "../../partials/header.html", initHeaderScripts);
+  includeHTML("#footer", "../../partials/footer.html");
+
+  function initHeaderScripts() {
+    // Re-bind burger menu toggle
+    const burger = document.querySelector(".hamburger");
+    const menu = document.getElementById("navMenu");
+
+    if (burger && menu) {
+      burger.addEventListener("click", () => {
+        menu.classList.toggle("show");
+      });
+    }
+
+    // Re-bind dropdown toggle for mobile
+    const dropdowns = document.querySelectorAll(".dropdown");
+    dropdowns.forEach((dropdown) => {
+      dropdown.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          dropdown.classList.toggle("active");
+        }
+      });
+    });
+  }
+</script>
+  </body>
+</html>

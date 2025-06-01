@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+    <title>Storage Price in Nepal (2025) - Isha International</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .table-container {
+        overflow-x: auto;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 800px;
+      }
+      thead {
+        background-color: #007acc;
+        color: #fff;
+      }
+      th, td {
+        padding: 12px 15px;
+        text-align: left;
+      }
+      tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tbody tr:hover {
+        background-color: #e6f7ff;
+      }
+      .filter-container {
+        margin-bottom: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .filter-container select {
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      @media (max-width: 600px) {
+        th, td {
+          padding: 8px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <h2>Storage Price in Nepal (2025)</h2>
+
+    <div class="filter-container">
+      <label for="typeFilter">Type:</label>
+      <select id="typeFilter">
+        <option value="All">All</option>
+        <option value="SSD">SSD</option>
+        <option value="HDD">HDD</option>
+        <option value="NVMe">NVMe</option>
+      </select>
+
+      <label for="brandFilter">Brand:</label>
+      <select id="brandFilter">
+        <option value="All">All</option>
+        <option value="Samsung">Samsung</option>
+        <option value="WD">WD</option>
+        <option value="Seagate">Seagate</option>
+        <option value="Kingston">Kingston</option>
+        <option value="Crucial">Crucial</option>
+      </select>
+
+      <label for="priceFilter">Max Price (NPR):</label>
+      <select id="priceFilter">
+        <option value="All">No Limit</option>
+        <option value="3000">3,000</option>
+        <option value="6000">6,000</option>
+        <option value="10000">10,000</option>
+        <option value="15000">15,000</option>
+      </select>
+    </div>
+
+    <div class="table-container">
+      <table id="storageTable">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Brand</th>
+            <th>Type</th>
+            <th>Capacity</th>
+            <th>Interface</th>
+            <th>Price (NPR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>WD Green 240GB</td>
+            <td>WD</td>
+            <td>SSD</td>
+            <td>240GB</td>
+            <td>SATA III</td>
+            <td>2,700</td>
+          </tr>
+          <tr>
+            <td>Samsung 970 EVO Plus 500GB</td>
+            <td>Samsung</td>
+            <td>NVMe</td>
+            <td>500GB</td>
+            <td>PCIe Gen 3.0</td>
+            <td>9,500</td>
+          </tr>
+          <tr>
+            <td>Seagate Barracuda 1TB</td>
+            <td>Seagate</td>
+            <td>HDD</td>
+            <td>1TB</td>
+            <td>SATA III</td>
+            <td>4,200</td>
+          </tr>
+          <tr>
+            <td>Kingston NV2 1TB</td>
+            <td>Kingston</td>
+            <td>NVMe</td>
+            <td>1TB</td>
+            <td>PCIe 4.0</td>
+            <td>10,800</td>
+          </tr>
+          <tr>
+            <td>Crucial MX500 500GB</td>
+            <td>Crucial</td>
+            <td>SSD</td>
+            <td>500GB</td>
+            <td>SATA III</td>
+            <td>5,200</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+      const typeFilter = document.getElementById("typeFilter");
+      const brandFilter = document.getElementById("brandFilter");
+      const priceFilter = document.getElementById("priceFilter");
+      const rows = document.querySelectorAll("#storageTable tbody tr");
+
+      function filterTable() {
+        const type = typeFilter.value;
+        const brand = brandFilter.value;
+        const maxPrice = priceFilter.value;
+
+        rows.forEach((row) => {
+          const cells = row.getElementsByTagName("td");
+          const rowBrand = cells[1].textContent;
+          const rowType = cells[2].textContent;
+          const rowPrice = parseInt(cells[5].textContent.replace(/,/g, ""));
+
+          let typeMatch = type === "All" || rowType === type;
+          let brandMatch = brand === "All" || rowBrand === brand;
+          let priceMatch = maxPrice === "All" || rowPrice <= parseInt(maxPrice);
+
+          row.style.display = typeMatch && brandMatch && priceMatch ? "" : "none";
+        });
+      }
+
+      typeFilter.addEventListener("change", filterTable);
+      brandFilter.addEventListener("change", filterTable);
+      priceFilter.addEventListener("change", filterTable);
+    </script>
+
+    <script src="../../js/partial.js"></script>
+    <script>
+  includeHTML("#header", "../../partials/header.html", initHeaderScripts);
+  includeHTML("#footer", "../../partials/footer.html");
+
+  function initHeaderScripts() {
+    // Re-bind burger menu toggle
+    const burger = document.querySelector(".hamburger");
+    const menu = document.getElementById("navMenu");
+
+    if (burger && menu) {
+      burger.addEventListener("click", () => {
+        menu.classList.toggle("show");
+      });
+    }
+
+    // Re-bind dropdown toggle for mobile
+    const dropdowns = document.querySelectorAll(".dropdown");
+    dropdowns.forEach((dropdown) => {
+      dropdown.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          dropdown.classList.toggle("active");
+        }
+      });
+    });
+  }
+</script>
+  </body>
+</html>
