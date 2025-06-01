@@ -1,0 +1,155 @@
+/* Section Wrapper */
+.trending-section {
+  background-color: #f4f4f4;
+  padding: 4rem 1rem;
+}
+
+/* Heading */
+.trending-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.trending-heading h1 {
+  font-size: 2.2rem;
+  color: #222;
+  position: relative;
+  display: inline-block;
+}
+
+.trending-heading h1::after {
+  content: "";
+  width: 60%;
+  height: 3px;
+  background: crimson;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Container Grid */
+.trending-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Category Block */
+.category-block {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.category-block h2 {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid crimson;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+}
+
+/* Row of Products */
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Product Card */
+.product-card {
+  flex: 1 1 calc(50% - 1rem);
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0.4rem;
+}
+
+.badge {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 50px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.badge.new {
+  background-color: #ffeaea;
+  color: #c62828;
+}
+
+.badge.instock {
+  background-color: #e7f5ec;
+  color: #2e7d32;
+}
+
+.badge.backorder {
+  background-color: #fff3e0;
+  color: #ef6c00;
+}
+
+/* Product Info */
+.product-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin: 0.4rem 0 0;
+  outline: none;
+  text-decoration: none;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: crimson;
+  margin-top: 0.3rem;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .product-card {
+    flex: 1 1 100%;
+  }
+
+  .trending-heading h1 {
+    font-size: 1.6rem;
+  }
+
+  .product-title {
+    font-size: 13px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+}
