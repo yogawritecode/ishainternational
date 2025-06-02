@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+  <title>2MP AcuSense Fixed Dome Network Camera</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .image-gallery {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .image-wrapper {
+      display: flex;
+      gap: 15px;
+    }
+
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .thumbnail {
+      width: 80px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.05);
+    }
+
+    .thumbnail.active {
+      border-color: #d00;
+    }
+
+    .main-image {
+      flex: 1;
+      max-width: 500px;
+      aspect-ratio: 4 / 3;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .product-details {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .price {
+      color: red;
+      font-size: 24px;
+      margin: 10px 0;
+    }
+
+    .benefits li {
+      list-style: none;
+      margin-bottom: 5px;
+    }
+
+    .actions {
+      margin: 20px 0;
+    }
+
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    .btn {
+      background: #d00;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .btn.secondary {
+      background: #333;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .specs-table td {
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .image-wrapper {
+        flex-direction: column;
+      }
+      .thumbnails {
+        flex-direction: row;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Add this inside your body -->
+    <div id="header"></div>
+  <div class="product-container">
+    <!-- IMAGE GALLERY -->
+    <div class="image-gallery">
+      <div class="image-wrapper">
+        <div class="thumbnails">
+          <img src="/assets/trending/2mp accusense fixed.jpg"
+               alt="Front View"
+               class="thumbnail active"
+               onclick="changeImage(this)">
+          <img src="/assets/trending/2mp accusense fixed.jpg"
+               alt="Side View"
+               class="thumbnail"
+               onclick="changeImage(this)">
+          <img src="/assets/trending/hikvision2MP.jpg"
+               alt="Installation View"
+               class="thumbnail"
+               onclick="changeImage(this)">
+        </div>
+        <div class="main-image">
+          <img id="mainImage"
+               src="/assets/trending/2mp accusense fixed.jpg"
+               alt="Main Product Image">
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT DETAILS -->
+    <div class="product-details">
+      <h1>2MP AcuSense Fixed Dome Network Camera</h1>
+      <p class="price">Rs 3,299.00</p>
+      <ul class="benefits">
+        <li>✅ 2MP High Resolution</li>
+        <li>✅ AcuSense Technology for Smart Detection</li>
+        <li>✅ IR Night Vision up to 30m</li>
+        <li>✅ IP67 Weatherproof</li>
+        <li>✅ 1 Year Warranty</li>
+      </ul>
+
+      <div class="actions">
+        <input type="number" value="1" min="1">
+        <button class="btn">Add to Cart</button>
+        <button class="btn secondary">Buy Now</button>
+      </div>
+
+      <h2>Specifications</h2>
+      <table class="specs-table">
+        <tr><td>Resolution</td><td>2MP (1920 × 1080)</td></tr>
+        <tr><td>Lens</td><td>2.8mm Fixed Lens</td></tr>
+        <tr><td>Night Vision</td><td>IR up to 30m</td></tr>
+        <tr><td>Technology</td><td>AcuSense Smart Detection</td></tr>
+        <tr><td>Ingress Protection</td><td>IP67 (Water/Dust Resistant)</td></tr>
+        <tr><td>Connectivity</td><td>PoE / LAN</td></tr>
+        <tr><td>Mount Type</td><td>Dome</td></tr>
+      </table>
+    </div>
+  </div>
+<!-- Your laptop table section stays here -->
+    <div id="footer"></div>
+
+  <script>
+    function changeImage(thumb) {
+      document.getElementById('mainImage').src = thumb.src;
+      document.querySelectorAll('.thumbnail').forEach(el => el.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+  </script>
+    <script src="../../js/partial.js"></script>
+    <script>
+  includeHTML("#header", "../../partials/header.html", initHeaderScripts);
+  includeHTML("#footer", "../../partials/footer.html");
+
+  function initHeaderScripts() {
+    // Re-bind burger menu toggle
+    const burger = document.querySelector(".hamburger");
+    const menu = document.getElementById("navMenu");
+
+    if (burger && menu) {
+      burger.addEventListener("click", () => {
+        menu.classList.toggle("show");
+      });
+    }
+
+    // Re-bind dropdown toggle for mobile
+    const dropdowns = document.querySelectorAll(".dropdown");
+    dropdowns.forEach((dropdown) => {
+      dropdown.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          dropdown.classList.toggle("active");
+        }
+      });
+    });
+  }
+</script>
+</body>
+</html>

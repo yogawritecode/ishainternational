@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+    <title>Battery Price in Nepal (2025)</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #f9f9f9;
+        margin: 0;
+        padding: 20px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .table-container {
+        overflow-x: auto;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 800px;
+      }
+      thead {
+        background-color: #007acc;
+        color: #fff;
+      }
+      th,
+      td {
+        padding: 12px 15px;
+        text-align: left;
+      }
+      tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tbody tr:hover {
+        background-color: #e6f7ff;
+      }
+      .filter-container {
+        margin-bottom: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .filter-container select {
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      @media (max-width: 600px) {
+        th,
+        td {
+          padding: 8px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <h2>Battery Price in Nepal (2025)</h2>
+
+    <div class="filter-container">
+      <label for="typeFilter">Battery Type:</label>
+      <select id="typeFilter">
+        <option value="All">All</option>
+        <option value="Inverter">Inverter</option>
+        <option value="VRLA">VRLA</option>
+        <option value="Alkaline">Alkaline</option>
+        <option value="Power Bank">Power Bank</option>
+      </select>
+
+      <label for="priceFilter">Max Price (NPR):</label>
+      <select id="priceFilter">
+        <option value="All">No Limit</option>
+        <option value="2000">2,000</option>
+        <option value="5000">5,000</option>
+        <option value="10000">10,000</option>
+        <option value="20000">20,000</option>
+        <option value="50000">50,000</option>
+      </select>
+    </div>
+
+    <div class="table-container">
+      <table id="batteryTable">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Type</th>
+            <th>Capacity</th>
+            <th>Voltage</th>
+            <th>Warranty</th>
+            <th>Price (NPR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Luminous Neo Charge 150Ah</td>
+            <td>Inverter</td>
+            <td>150Ah</td>
+            <td>12V</td>
+            <td>3 Years</td>
+            <td>30,500</td>
+          </tr>
+          <tr>
+            <td>Amaron Quanta 100Ah</td>
+            <td>VRLA</td>
+            <td>100Ah</td>
+            <td>12V</td>
+            <td>2 Years</td>
+            <td>24,000</td>
+          </tr>
+          <tr>
+            <td>Maxell Alkaline AA</td>
+            <td>Alkaline</td>
+            <td>3000mAh</td>
+            <td>1.5V</td>
+            <td>N/A</td>
+            <td>180</td>
+          </tr>
+          <tr>
+            <td>Ultima Boost 20K Pro</td>
+            <td>Power Bank</td>
+            <td>20000mAh</td>
+            <td>5V</td>
+            <td>1 Year</td>
+            <td>3,999</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- Your laptop table section stays here -->
+    <div id="footer"></div>
+
+    <script>
+      const typeFilter = document.getElementById("typeFilter");
+      const priceFilter = document.getElementById("priceFilter");
+      const rows = document.getElementById("batteryTable").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+      function filterTable() {
+        const selectedType = typeFilter.value;
+        const maxPrice = priceFilter.value === "All" ? Infinity : parseInt(priceFilter.value);
+
+        for (let row of rows) {
+          const cells = row.getElementsByTagName("td");
+          const rowType = cells[1].textContent;
+          const rowPrice = parseInt(cells[5].textContent.replace(/,/g, ""));
+
+          const matchType = selectedType === "All" || rowType === selectedType;
+          const matchPrice = rowPrice <= maxPrice;
+
+          row.style.display = matchType && matchPrice ? "" : "none";
+        }
+      }
+
+      typeFilter.addEventListener("change", filterTable);
+      priceFilter.addEventListener("change", filterTable);
+    </script>
+      <script src="../../js/partial.js"></script>
+    <script>
+  includeHTML("#header", "../../partials/header.html", initHeaderScripts);
+  includeHTML("#footer", "../../partials/footer.html");
+
+  function initHeaderScripts() {
+    // Re-bind burger menu toggle
+    const burger = document.querySelector(".hamburger");
+    const menu = document.getElementById("navMenu");
+
+    if (burger && menu) {
+      burger.addEventListener("click", () => {
+        menu.classList.toggle("show");
+      });
+    }
+
+    // Re-bind dropdown toggle for mobile
+    const dropdowns = document.querySelectorAll(".dropdown");
+    dropdowns.forEach((dropdown) => {
+      dropdown.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          dropdown.classList.toggle("active");
+        }
+      });
+    });
+  }
+</script>
+  </body>
+</html>
